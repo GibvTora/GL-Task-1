@@ -1,0 +1,2 @@
+C:\Users\Home\source\repos\ServerV\x64\Debug\ServerV.exe.lastcodeanalysissucceeded
+C:\Users\Home\source\repos\ServerV\ServerV\x64\Debug\NativeCodeAnalysis.read.1.tlog
