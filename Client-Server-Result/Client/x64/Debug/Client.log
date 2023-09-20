@@ -1,0 +1,6 @@
+﻿  ApiC.cpp
+C:\Users\Home\source\repos\ServerV\Client\ApiC.cpp(25,61): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+  Client.cpp
+  NetworkingC.cpp
+  Создание кода...
+  Client.vcxproj -> C:\Users\Home\source\repos\ServerV\x64\Debug\Client.exe
