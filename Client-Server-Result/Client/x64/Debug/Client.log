@@ -1,0 +1,6 @@
+﻿  ApiC.cpp
+C:\Users\Operator-200\source\repos\Client-Server-Result\Client\ApiC.cpp(25,61): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Client.cpp
+  NetworkingC.cpp
+  Generating Code...
+  Client.vcxproj -> C:\Users\Operator-200\source\repos\Client-Server-Result\x64\Debug\Client.exe
