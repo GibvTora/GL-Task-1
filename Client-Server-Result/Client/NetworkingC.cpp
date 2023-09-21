@@ -3,8 +3,8 @@
 const int PORT = 1111;
 const char IP_ADDRESS[] = ("127.0.0.1");
 
-#ifdef _WIN32 // ��� Windows
-void InitializeNetwork() {
+#ifdef _WIN32 // Для Windows
+void InitializeNetwork() {    //Ініціалізуємо бібліотеку WSA для роботи з мережею
     WSADATA wsaData;
     if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
         std::cerr << "Failed to initialize Winsock" << std::endl;
@@ -12,7 +12,7 @@ void InitializeNetwork() {
     }
 }
 
-SOCKET ConnectToServer() {
+SOCKET ConnectToServer() {   //Створюємо сокет та з'язок з сервером
     SOCKET Connection = socket(AF_INET, SOCK_STREAM, 0);
     if (Connection == INVALID_SOCKET) {
         std::cerr << "Socket creation failed" << std::endl;
@@ -35,16 +35,16 @@ SOCKET ConnectToServer() {
     return Connection;
 }
 
-void CleanupNetwork(SOCKET conn) {
+void CleanupNetwork(SOCKET conn) {    //Чистимо сокет та WSA
     closesocket(conn);
     WSACleanup();
 }
-#else // ��� Linux
+#else // Для Linux
 void InitializeNetwork() {
-    // ���� ������� � ������������ ���������� ����� �� Linux
+    // Ініціалізація WSA не потрібна на Linux
 }
 
-SOCKET ConnectToServer() {
+SOCKET ConnectToServer() {    //Створюємо сокет та з'язок з сервером
     SOCKET Connection = socket(AF_INET, SOCK_STREAM, 0);
     if (Connection == -1) {
         perror("Socket creation failed");
