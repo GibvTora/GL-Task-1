@@ -2,16 +2,16 @@
 #include "NetworkingC.h"
 
 int main(int argc, char* argv[]) {
-    InitializeNetwork();
+    InitializeNetwork();    //Ініціалізуємо WSA
 
-    SOCKET Connection = ConnectToServer();
+    SOCKET Connection = ConnectToServer();    //Створюємо з'єднання з сервером
 
-    while (true) {
-        std::thread clientThread(GetUserInput, Connection);
-        clientThread.join();
+    while (true) {    
+        std::thread clientThread(GetUserInput, Connection);    //Створюємо потік
+        clientThread.join();                                   //Приєднуємося до потоку
     }
 
-    CleanupNetwork(Connection);
+    CleanupNetwork(Connection);    //Чистимо залишки роботи з мережею(сокет, WSA)
 
     return 0;
 }
